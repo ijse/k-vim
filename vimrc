@@ -225,7 +225,12 @@ set helplang=cn
 "set langmenu=zh_CN.UTF-8
 "set enc=2byte-gb18030
 " 下面这句只影响普通模式 (非图形界面) 下的 Vim。
-set termencoding=utf-8
+" windows系统下通常终端字符集是gbk的，而其它系统则默认为utf-8
+if has('win32')
+    set termencoding=gbk
+else
+    set termencoding=utf-8
+endif
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
@@ -559,5 +564,4 @@ highlight clear SpellRare
 highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
-
 
