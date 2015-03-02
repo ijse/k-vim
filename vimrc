@@ -240,6 +240,10 @@ set formatoptions+=m
 " 合并两行中文时，不在中间加空格：
 set formatoptions+=B
 
+" 配置使windows系统下的提示信息不乱码
+if has('win32')
+    language messages zh_CN.utf-8
+endif
 
 "==========================================
 " others 其它设置
